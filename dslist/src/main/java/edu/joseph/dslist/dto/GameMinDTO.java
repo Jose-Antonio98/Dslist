@@ -2,6 +2,7 @@ package edu.joseph.dslist.dto;
 
 
 import edu.joseph.dslist.model.Game;
+import edu.joseph.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -20,6 +21,12 @@ public class GameMinDTO {
         this.year = entity.getYear();
         this.genre = entity.getGenre();
         this.score = entity.getScore();
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        this.id = projection.getId();
+        this.title = projection.getTitle();
+        this.year = projection.getYear();
     }
 
     public Long getId() {
